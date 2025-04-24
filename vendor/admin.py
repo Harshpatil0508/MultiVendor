@@ -7,7 +7,7 @@ class VendorAdmin(admin.ModelAdmin):
     list_display_links = ('user','vendor_name')
     list_filter = ('is_approved',)
     search_fields = ('vendor_name',)
-    # list_editable = ('is_approved',)
+    list_editable = ('is_approved',)
     list_per_page = 10
 
 admin.site.register(Vendor,VendorAdmin)

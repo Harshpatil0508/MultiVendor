@@ -5,6 +5,7 @@ from django.contrib import auth
 from vendor.forms import VendorForm
 from .forms import UserForm
 from .models import User, UserProfile
+from vendor.models import Vendor
 from django.contrib import messages
 from .utils import *
 from django.contrib.auth.decorators import login_required,user_passes_test
@@ -165,7 +166,6 @@ def logout(request):
   return redirect('login')
 
 @login_required(login_url='login')
-
 def myAccount(request):
   user = request.user
   redirectUrl = detectUser(user)
@@ -180,6 +180,7 @@ def customerDashboard(request):
 @login_required(login_url='login')
 @user_passes_test(check_role_vendor)
 def vendorDashboard(request):
+  vendor = Vendor.objects.get(user=request.user)
   return render(request,'accounts/vendorDashboard.html')
 
 def forgotPassword(request):  # sourcery skip: extract-method
