@@ -149,3 +149,11 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 EMAIL_USE_TLS = True
+
+# Session timeout
+
+# settings.py
+
+SESSION_COOKIE_AGE = 1800  # 30 minutes (1800 seconds)
+SESSION_SAVE_EVERY_REQUEST = True  # Reset the timeout on every request
+

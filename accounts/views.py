@@ -29,7 +29,6 @@ def registerUser(request):
   if request.user.is_authenticated:
     messages.warning(request, "You are already logged in")
     return redirect('myAccount')
-  # sourcery skip: extract-method, remove-unnecessary-else
   elif request.method == 'POST':
     form = UserForm(request.POST)    
     if form.is_valid():
@@ -55,6 +54,7 @@ def registerUser(request):
       # )
       # user.role = User.CUSTOMER
       # user.save()
+      
       # Send Verification Email
       mail_subject = "Activate your Customer account"
       email_template = "accounts/emails/account_verification_email.html"
