@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'accounts.context_processors.get_vendor',
+                'accounts.context_processors.get_google_api',
             ],
         },
     },
@@ -151,9 +152,10 @@ DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 EMAIL_USE_TLS = True
 
 # Session timeout
-
-# settings.py
-
 SESSION_COOKIE_AGE = 1800  # 30 minutes (1800 seconds)
 SESSION_SAVE_EVERY_REQUEST = True  # Reset the timeout on every request
+
+GOOGLE_API_KEY = config('GOOGLE_API_KEY')
+
+
 

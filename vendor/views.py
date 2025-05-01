@@ -20,7 +20,7 @@ def vprofile(request):
     if profile_form.is_valid() and vendor_form.is_valid():
       profile_form.save()
       vendor_form.save()
-      messages.success(request, "Settings updated successfully!")
+      # messages.success(request, "Settings updated successfully!")
       return redirect('vprofile')
     else:
       print("Form is not valid")
