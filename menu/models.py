@@ -31,5 +31,11 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def clean(self):
+        self.product_name = self.product_name.capitalize()
+        
+    # class Meta:
+    #     unique_together = ('vendor', 'product_name') 
+
     def __str__(self):
         return self.product_name

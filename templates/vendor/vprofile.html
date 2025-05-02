@@ -13,6 +13,8 @@
           <div class="user-dashboard loader-holder">
             <div class="user-holder">
               <h5 class="text-uppercase">Manage Your Restaurant</h5>
+              {% include "includes/alerts.html" %}
+
               <!-- My Restaurants Form Start -->
               <form
                 action="{% url 'vprofile' %}"
